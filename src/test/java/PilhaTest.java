@@ -1,8 +1,10 @@
+import calculadora.Calculadora;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class PilhaTest {
+
 
     @Test
     public void testLimitPilha() {
@@ -27,5 +29,24 @@ public class PilhaTest {
         pilha.pop().getNome().equals(resultadoEsperado);
         assertEquals(resultadoEsperado, pilha.pop().getNome());
 
+    }
+
+    @Test(expected = ArrayStoreException.class)
+    public void testPilhaNaoAddAlemDoLimite() {
+        Pilha pilha = new Pilha();
+        pilha.push(new Livro("A voltwa"));
+        pilha.push(new Livro("A voltwa"));
+        pilha.push(new Livro("A voltwa"));
+        pilha.push(new Livro("A volt2a"));
+        pilha.push(new Livro("A volwta"));
+        pilha.push(new Livro("A volwta"));
+        pilha.push(new Livro("A volwta"));
+
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void testeDividerFail() {
+        Calculadora somar = new Calculadora();
+        somar.divider(2,0);
     }
 }
