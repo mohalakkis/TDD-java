@@ -1,7 +1,7 @@
 public class PilhaMain {
     public static void main(String[] args) {
 
-        PilhaTest pilhaTest = new PilhaTest();
+        PilhaTestsssss pilhaTest = new PilhaTestsssss();
         boolean resultado;
 
         resultado = pilhaTest.testeInitialNameOfBook();
