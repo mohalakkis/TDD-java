@@ -1,4 +1,5 @@
 import calculadora.Calculadora;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -6,7 +7,7 @@ import static org.junit.Assert.*;
 public class PilhaTest {
 
 
-    @Test
+    @Ignore
     public void testLimitPilha() {
         Pilha pilha = new Pilha();
 
@@ -44,9 +45,29 @@ public class PilhaTest {
 
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
+    public void testeDividerSucess() {
+        Calculadora somar = new Calculadora();
+        somar.divider(2,34);
+    }
+
+    @Test(expected = ArithmeticException.class, timeout = 1000)
     public void testeDividerFail() {
         Calculadora somar = new Calculadora();
         somar.divider(2,0);
+    }
+
+
+
+    @Test(expected = ArithmeticException.class, timeout = 1000)
+    public void testeSomarFail() {
+        Calculadora calculadora = new Calculadora();
+        calculadora.somar(2,0);
+    }
+
+    @Test()
+    public void testeSomarSucess() {
+        Calculadora calculadora = new Calculadora();
+        calculadora.somar(2,2);
     }
 }

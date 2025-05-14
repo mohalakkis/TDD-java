@@ -8,5 +8,10 @@ public class Calculadora {
         }
         return a / b;
     }
-
+    public int somar(int a, int b) {
+        if (a == 0 || b == 0) {
+            throw new ArithmeticException("tem coisa errada");
+        }
+        return a + b;
+    }
 }
